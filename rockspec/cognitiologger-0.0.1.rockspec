@@ -1,10 +1,8 @@
 package = "CognitioLogger"
 version = "0.0.1"
 source = {
-    url = "https://github.com/Kuaralaboratories/CognitioLogger/mypackage-1.0.tar.gz",
+    url = "https://github.com/Kuaralaboratories/CognitioLogger/archive/refs/tags/prerelease.tar.gz",
     tag = "v0.0.1",
-    -- Yedek olarak URL kullanılabilir.
-    -- url = "git://github.com/user/mypackage.git",
 }
 description = {
     summary = "Burası paketinizin kısa açıklamasıdır.",
