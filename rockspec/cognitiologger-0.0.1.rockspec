@@ -1,7 +1,7 @@
 package = "CognitioLogger"
 version = "0.0.1"
 source = {
-    url = "https://github.com/Kuaralaboratories/CognitioLogger/archive/refs/tags/prerelease.tar.gz",
+    url = "https://github.com/Kuaralaboratories/CognitioLogger/archive/refs/tags/v0.0.1-release.tar.gz",
     tag = "v0.0.1",
 }
 description = {
