@@ -13,17 +13,17 @@ local cognitiolog = { _version = "0.0.1" }
 
 cognitiolog.usecolor = true
 cognitiolog.outfile = nil
-cognitiolog.level = "All"
+cognitiolog.level = "minimum"
 
 local logs = {
-  { name = "All", color = "\27[37m", },
-  { name = "Error", color = "\27[31m", },
-  { name = "Fail", color = "\27[35m", },
-  { name = "Glitch", color = "\27[33m", },
-  { name = "Fault", color = "\27[34m", },
-  { name = "Anomaly", color = "\27[36m", },
-  { name = "Defect", color = "\27[32m", },
-  { name = "Info", color = "\27[34m", },
+  { name = "minimum", color = "\27[37m", },
+  { name = "info", color = "\27[34m", },
+  { name = "defect", color = "\27[32m", },
+  { name = "anomaly", color = "\27[36m", },
+  { name = "fault", color = "\27[34m", },
+  { name = "glitch", color = "\27[33m", },
+  { name = "fail", color = "\27[35m", },
+  { name = "error", color = "\27[31m", },
 }
 
 local levels = {}
