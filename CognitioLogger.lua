@@ -3,7 +3,7 @@
 
   This software has been developed by Kuara Laboratories for Cognitio project 
   and licensed as MIT License. Projects is assigned to Yakup Cemil Kayabaş.
-  
+
   Inspired by https://github.com/rxi/log.lua
 
   This software is released under the MIT License.
@@ -27,11 +27,11 @@ local customLogs = {
   { name = "error", color = "\27[31m", },
 }
 
-local function addCustomColor(name, color)
+local function addCustomLogs(name, color)
   table.insert(customLogs, {name = name, color = color})
 end
 
-logs = customLogs
+local logs = customLogs
 
 local levels = {}
 for i, v in ipairs(logs) do
