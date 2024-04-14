@@ -16,14 +16,14 @@ cognitiolog.level = ""
 
 
 local colors = {
-  { name = "Error", color = "\27[31m", },
-  { name = "Fail", color = "\27[35m", },
-  { name = "Glitch", color = "\27[33m", },
-  { name = "Defect", color = "\27[32m", },
-  { name = "Fault", color = "\27[34m", },
-  { name = "Anomaly", color = "\27[36m", },
-  { name = "Info", color = "\27[34m", },
   { name = "", color = "\27[37m", },
+  { name = "Info", color = "\27[34m", },
+  { name = "Defect", color = "\27[32m", },
+  { name = "Anomaly", color = "\27[36m", },
+  { name = "Fault", color = "\27[34m", },
+  { name = "Glitch", color = "\27[33m", },
+  { name = "Fail", color = "\27[35m", },
+  { name = "Error", color = "\27[31m", },
 }
 
 
