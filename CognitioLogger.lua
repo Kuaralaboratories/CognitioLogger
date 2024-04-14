@@ -2,7 +2,8 @@
   Copyright (C) Kuara Laboratories
 
   This software has been developed by Kuara Laboratories for Cognitio project 
-  and licensed as MIT License. Projects is assigned to Yakup Cemil Kayabaş
+  and licensed as MIT License. Projects is assigned to Yakup Cemil Kayabaş.
+  Inspired by https://github.com/rxi/log.lua
 
   This software is released under the MIT License.
   https://opensource.org/licenses/MIT
@@ -12,10 +13,10 @@ local cognitiolog = { _version = "0.0.1" }
 
 cognitiolog.usecolor = true
 cognitiolog.outfile = nil
-cognitiolog.level = ""
+cognitiolog.level = "All"
 
-
-local colors = {
+local level = {
+  { name = "All", color = "\27[37m", },
   { name = "Error", color = "\27[31m", },
   { name = "Fail", color = "\27[35m", },
   { name = "Glitch", color = "\27[33m", },
@@ -23,12 +24,10 @@ local colors = {
   { name = "Anomaly", color = "\27[36m", },
   { name = "Defect", color = "\27[32m", },
   { name = "Info", color = "\27[34m", },
-  { name = "", color = "\27[37m", },
 }
 
-
 local levels = {}
-for i, v in ipairs(colors) do
+for i, v in ipairs(level) do
   levels[v.name] = i
 end
 
@@ -38,7 +37,6 @@ local round = function(x, increment)
   x = x / increment
   return (x > 0 and math.floor(x + .5) or math.ceil(x - .5)) * increment
 end
-
 
 local _tostring = tostring
 
@@ -55,11 +53,10 @@ local tostring = function(...)
 end
 
 
-for i, x in ipairs(colors) do
+for i, x in ipairs(level) do
   local nameupper = x.name:upper()
   cognitiolog[x.name] = function(...)
 
-    -- Return early if we're below the log level
     if i < levels[cognitiolog.level] then
       return
     end
@@ -68,8 +65,7 @@ for i, x in ipairs(colors) do
     local info = debug.getinfo(2, "Sl")
     local lineinfo = info.short_src .. ":" .. info.currentline
 
-    -- Output to console
-    print(string.format("%s[%-6s%s]%s %s: %s",
+    print(string.format("%s[%-7s%s]%s %s: %s",
                         cognitiolog.usecolor and x.color or "",
                         nameupper,
                         os.date("%H:%M:%S"),
@@ -77,10 +73,9 @@ for i, x in ipairs(colors) do
                         lineinfo,
                         message))
 
-    -- Output to log file
     if cognitiolog.outfile then
       local fp = io.open(cognitiolog.outfile, "a")
-      local str = string.format("[%-6s%s] %s: %s\n",
+      local str = string.format("[%-7s%s] %s: %s\n",
                                 nameupper, os.date(), lineinfo, message)
       fp:write(str)
       fp:close()
@@ -88,6 +83,5 @@ for i, x in ipairs(colors) do
 
   end
 end
-
 
 return cognitiolog
