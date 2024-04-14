@@ -15,7 +15,7 @@ cognitiolog.usecolor = true
 cognitiolog.outfile = nil
 cognitiolog.level = "All"
 
-local level = {
+local logs = {
   { name = "All", color = "\27[37m", },
   { name = "Error", color = "\27[31m", },
   { name = "Fail", color = "\27[35m", },
@@ -27,7 +27,7 @@ local level = {
 }
 
 local levels = {}
-for i, v in ipairs(level) do
+for i, v in ipairs(logs) do
   levels[v.name] = i
 end
 
@@ -53,7 +53,7 @@ local tostring = function(...)
 end
 
 
-for i, x in ipairs(level) do
+for i, x in ipairs(logs) do
   local nameupper = x.name:upper()
   cognitiolog[x.name] = function(...)
 
