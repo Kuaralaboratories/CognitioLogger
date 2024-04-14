@@ -1,5 +1,5 @@
 package = "CognitioLogger"
-version = "0.0.2-4"
+version = "0.0.2-5"
 source = {
     url = "https://github.com/Kuaralaboratories/CognitioLogger/archive/refs/tags/v0.0.1-release.tar.gz",
     tag = "v0.0.2",
