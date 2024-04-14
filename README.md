@@ -41,6 +41,13 @@ cognitiolog.Error("An error occurred!")  -- Logs to terminal and file
 cognitiolog.Info("Informational message.") -- Logs only to terminal
 ```
 
+### Custom Log Configuration:
+```lua
+cognitiolog.addCustomLog("MyCustomLogTpye", "\27[35m") -- Log type and color added like this
+
+cognitiolog.MyCustomLogType("MyCustomLog") -- Logs with color you choose and level
+```
+
 ## Notification Classes:
 
 - **Error:** Critical errors that require immediate attention.
