@@ -1,3 +1,13 @@
+--[[
+  Copyright (C) Kuara Laboratories
+
+  This software has been developed by Kuara Laboratories for Cognitio project 
+  and licensed as MIT License. Projects is assigned to Yakup Cemil Kayabaş
+
+  This software is released under the MIT License.
+  https://opensource.org/licenses/MIT
+]]
+
 local cognitiolog = { _version = "0.0.1" }
 
 cognitiolog.usecolor = true

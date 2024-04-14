@@ -1,13 +1,13 @@
 package = "CognitioLogger"
-version = "0.0.1"
+version = "0.0.2-2"
 source = {
     url = "https://github.com/Kuaralaboratories/CognitioLogger/archive/refs/tags/v0.0.1-release.tar.gz",
-    tag = "v0.0.1",
+    tag = "v0.0.2",
 }
 description = {
-    summary = "Burası paketinizin kısa açıklamasıdır.",
+    summary = "CognitioLogger is lightweight logging library for logging professionally.",
     detailed = [[
-        Buraya daha detaylı bir açıklama ekleyebilirsiniz.
+        Made with löve by Kuaralaboratories_
     ]],
     license = "MIT",
     homepage = "https://github.com/Kuaralaboratories/CognitioLogger",
