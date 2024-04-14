@@ -3,6 +3,7 @@
 
   This software has been developed by Kuara Laboratories for Cognitio project 
   and licensed as MIT License. Projects is assigned to Yakup Cemil Kayabaş.
+  
   Inspired by https://github.com/rxi/log.lua
 
   This software is released under the MIT License.
@@ -15,7 +16,7 @@ cognitiolog.usecolor = true
 cognitiolog.outfile = nil
 cognitiolog.level = "minimum"
 
-local logs = {
+local customLogs = {
   { name = "minimum", color = "\27[37m", },
   { name = "info", color = "\27[34m", },
   { name = "defect", color = "\27[32m", },
@@ -25,6 +26,12 @@ local logs = {
   { name = "fail", color = "\27[35m", },
   { name = "error", color = "\27[31m", },
 }
+
+local function addCustomColor(name, color)
+  table.insert(customLogs, {name = name, color = color})
+end
+
+logs = customLogs
 
 local levels = {}
 for i, v in ipairs(logs) do
@@ -63,9 +70,9 @@ for i, x in ipairs(logs) do
 
     local message = tostring(...)
     local info = debug.getinfo(2, "Sl")
-    local lineinfo = info.short_src .. ":" .. info.currentline
+    local lineinfo = info.short_src .. " :" .. info.currentline
 
-    print(string.format("%s[%-7s%s]%s %s: %s",
+    print(string.format("%s[%-6s%s]%s %s: %s",
                         cognitiolog.usecolor and x.color or "",
                         nameupper,
                         os.date("%H:%M:%S"),
@@ -75,7 +82,7 @@ for i, x in ipairs(logs) do
 
     if cognitiolog.outfile then
       local fp = io.open(cognitiolog.outfile, "a")
-      local str = string.format("[%-7s%s] %s: %s\n",
+      local str = string.format("[%-6s%s] %s: %s\n",
                                 nameupper, os.date(), lineinfo, message)
       fp:write(str)
       fp:close()
