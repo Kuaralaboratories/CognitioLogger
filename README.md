@@ -43,7 +43,7 @@ cognitiolog.Info("Informational message.") -- Logs only to terminal
 
 ### Custom Log Configuration:
 ```lua
-cognitiolog.addCustomLogs("MyCustomLogTpye", "\27[35m") -- Log type and color added like this
+cognitiolog.addCustomLogs("MyCustomLogType", "\27[35m") -- Log type and color added like this
 
 cognitiolog.MyCustomLogType("MyCustomLog") -- Logs with color you choose and level
 ```
@@ -68,3 +68,6 @@ For further insights into advanced usage, customization options, and integration
 Feel free to explore and leverage CognitioLogger to enhance the logging experience in your Lua applications!
 
 If you have any questions or need assistance, don't hesitate to reach out.
+
+*For more information and inquiries, please contact us at contact@kuaralabs.org or visit our website at [www.kuaralabs.org](https://www.kuaralabs.org).*
+
