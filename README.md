@@ -2,6 +2,8 @@
 
 CognitioLogger is a versatile logging library written in Lua, developed by Kuara Laboratories. It offers comprehensive logging capabilities with customizable features to suit various logging requirements. Let's delve into the details of its features, configuration options, and usage guidelines.
 
+![Logger Logo](images/Cognitio-Logger.svg)
+
 ## Features:
 
 1. **Flexible Notification Classes:**
